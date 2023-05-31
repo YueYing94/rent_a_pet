@@ -11,8 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <% if user_signed_in? %>
+      <h3>Hi <%= current_user.first_name %></h3>
+      <% end %>
   </body>
 </html>
