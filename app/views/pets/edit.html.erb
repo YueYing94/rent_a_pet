@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :age %>
+    <%= f.input :species %>
+    <%= f.input :available, as: :boolean, collection: [[true, 'Available'], [false, 'Not available']] %>
+    <%= f.submit "Edit the pet!" %>
+  <% end %>
+</div>
