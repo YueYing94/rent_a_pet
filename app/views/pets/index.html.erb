@@ -1,0 +1,12 @@
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= link_to pet.name, pet_path(pet)  %>
+      <% if pet.available %>
+        <i class="fa-solid fa-check"></i>
+      <% else %>
+        <i class="fa-solid fa-xmark"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

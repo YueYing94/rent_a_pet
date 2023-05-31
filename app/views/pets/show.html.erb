@@ -1,0 +1,3 @@
+<%= @pet.name %>
+<%= link_to "Edit", edit_pet_path(@pet) %>
+<%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
