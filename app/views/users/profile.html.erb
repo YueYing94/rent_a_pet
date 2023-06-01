@@ -1,17 +1,40 @@
-<ul>
-  <% @pets.each do |pet| %>
-    <li>
-      <%= link_to pet.name, pet_path(pet)  %>
-      <% if pet.available %>
-        <i class="fa-solid fa-check"></i>
-      <% else %>
-        <i class="fa-solid fa-xmark"></i>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class = "container">
+  <H2>Your current pets</H2>
+    <% @pets.each do |pet| %>
+    <ul class="list-unstyled text-decoration-none">
+      <li>
+        <div class="cards">
+          <div class="card-product">
+            <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-product-infos">
+              <h2>Name <%= link_to pet.name, pet_path(pet), class:"text-decoration-none" %></h2>
+              <p>Age <%= pet.age %></p>
+              <% if pet.available %>
+                <i class="fa-solid fa-check"></i>
+              <% else %>
+                <i class="fa-solid fa-xmark"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <% end %>
 
-<H2>Your current booking</H2>
-<% current_user.bookings.each do |booking| %>
-<li><%= booking.pet.name %></li>
-<% end %>
+  <H2>Your current booking</H2>
+  <% current_user.bookings.each do |booking| %>
+    <ul class="list-unstyled text-decoration-none">
+
+      <li>
+        <div class="card-product">
+          <%= cl_image_tag booking.pet.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-product-infos">
+            <h2>Name <%= booking.pet.name %></h2>
+            <p>Age <%= booking.pet.age %></p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  <% end %>
+</div>
