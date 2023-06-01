@@ -8,3 +8,11 @@
 <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
 <%= link_to "Edit", edit_pet_path(@pet) %>
 <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+
+<div class="container">
+  <%= simple_form_for [@pet, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.input :end_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.submit "book it!" %>
+  <% end %>
+<div>
