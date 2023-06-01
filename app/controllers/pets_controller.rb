@@ -5,6 +5,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -32,6 +33,10 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
     redirect_to pets_path, status: :see_other
+  end
+
+  def search
+    @pets = Pet.where(species: params[:query])
   end
 
   private
