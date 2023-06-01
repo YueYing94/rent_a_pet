@@ -35,6 +35,10 @@ class PetsController < ApplicationController
     redirect_to pets_path, status: :see_other
   end
 
+  def search
+    @pets = Pet.where(species: params[:query])
+  end
+
   private
 
   def pet_params
