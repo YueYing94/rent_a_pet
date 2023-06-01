@@ -10,7 +10,23 @@
 </div>
 
 <h1>Pages#home</h1>
+<h1>All Pets</h1>
+
+<div class="cards">
+  <% @pets.each do |pet| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="container-pet">
+      <p><%= pet.name %></p>
+      <p><%= pet.age %> y/o</p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+
 <p>Find me in app/views/pages/home.html.erb</p>
+
 <% if user_signed_in? %>
      <h3>Hi <%= current_user.first_name %></h3>
    <% end %>
