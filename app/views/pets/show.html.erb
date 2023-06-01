@@ -1,13 +1,16 @@
-<div class="card-category"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @pet.photo.key, height: 300, crop: :fill %>')"
->
-  <%= @pet.name %>
+<div class="container">
+  <div class="pet-name">
+    <h1><%= @pet.name %></h1>
+  </div>
+  <div class="pet-image">
+    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="edit">
+    <%= link_to "Edit", edit_pet_path(@pet) %>
+    <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+  </div>
 </div>
 
-<%= @pet.name %>
-<%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-<%= link_to "Edit", edit_pet_path(@pet) %>
-<%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 
 <div class="container">
   <%= simple_form_for [@pet, @booking] do |f| %>
