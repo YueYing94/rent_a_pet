@@ -4,6 +4,21 @@
   margin-top:15px
 }
 
+.search-result-title {
+  margin-left:50px;
+  margin-top:20px;
+}
+
+.card-category a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-category span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .container-pet {
   color: white;
   display: flex;
@@ -16,7 +31,21 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 // Smallest device
