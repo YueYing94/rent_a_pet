@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     @booking.save
-    redirect_to pets_path
+    redirect_to profile_path
   end
 
   private

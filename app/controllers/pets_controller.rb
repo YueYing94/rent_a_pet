@@ -1,8 +1,4 @@
 class PetsController < ApplicationController
-  def index
-    @pets = Pet.all
-  end
-
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
@@ -32,7 +28,7 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to pets_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   def search
