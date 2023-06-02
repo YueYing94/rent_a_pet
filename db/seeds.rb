@@ -19,7 +19,7 @@ require "open-uri"
 # anielle = User.create(first_name: "Danielle", last_name: "Rochelle", address: "Rue de la vie, Paris, France", email: "danielle.rochelle@lewagon.fr", password: 1346438)
 # anna = User.create(first_name: "Anna", last_name: "Baker", address: "Tulip Gardens, Edinborough", email: "anna.baker@yahoo.com", password: 2645643)
 john = User.create(first_name: "John", last_name: "Meyers", address: "Boston Road, New York, USA", email: "john.meyers@gmail.com", password: 2713786)
-
+puts "user is done"
 
 # Pet.create(name: "Howliday", species: "Dog", age: 6, available: true, user_id: john.id, pet_image: 'https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')
 
@@ -27,7 +27,7 @@ john = User.create(first_name: "John", last_name: "Meyers", address: "Boston Roa
 
 file = URI.open("https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
 pet = Pet.new(name: "Howliday", species: "Dog", age: 6, available: true, user_id: john.id)
-pet.photo.attach(io: file, filename: "Howliday.png", content_type: "image/png", user_id: john.id)
+pet.photo.attach(io: file, filename: "Howliday.png", content_type: "image/png")
 pet.save
 # Pet.create(name: "Broccoli", species: "Parrot", age: 3, available: true, user_id: anna.id, pet_image: 'https://images.unsplash.com/photo-1682079471326-75221097c37d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80')
 # Pet.create(name: "Bonnie & Ronnie", species: "Guinea pigs", age: 2, available: false, user_id: danielle.id, pet_image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80')
