@@ -32,7 +32,7 @@ class PetsController < ApplicationController
   end
 
   def search
-    @pets = Pet.where(species: params[:query])
+    @pets = Pet.where('lower(species) = ?', params[:query].downcase)
     @search_query = params[:query]
     @result_count = @pets.count
   end

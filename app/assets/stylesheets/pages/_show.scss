@@ -9,3 +9,41 @@
     padding-top: 16px;
   }
 }
+
+
+.container-new-pet {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+
+}
+.container-new-pet input[type="text"],
+.container-new-pet input[type="file"],
+.container-new-pet input[type="submit"],
+.container-new-pet input[type="checkbox"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.container-new-pet input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+}
+.container-new-pet input[type="submit"]:hover {
+  background-color: #0056B3;
+}
+.container-new-pet label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.container-new-pet input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
