@@ -47,3 +47,74 @@
   width: 20px;
   height: 20px;
 }
+
+.container-log-in {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+}
+
+.container-log-in h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container-log-in .form-inputs {
+  margin-bottom: 20px;
+}
+
+.container-log-in input[type="email"],
+.container-log-in input[type="password"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container-log-in input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container-log-in input[type="submit"]:hover {
+  background-color: #0056B3;
+}
+
+.container-log-in .form-actions {
+  text-align: center;
+}
+
+.container-log-in .links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.navbar {
+  background-image: url("https://mcdn.wallpapersafari.com/medium/32/78/dTuctf.jpg");
+  background-size: cover;
+  background-position: center;
+}
