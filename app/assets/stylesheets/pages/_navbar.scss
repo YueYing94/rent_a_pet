@@ -1,0 +1,28 @@
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container > * {
+  margin-right: 10px;
+}
+
+.pets-search-bar {
+  max-width: 400px;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-primary {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
