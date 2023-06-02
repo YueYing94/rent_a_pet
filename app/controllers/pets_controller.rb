@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user!, only:[:search]
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
@@ -28,6 +29,7 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     if @pet.bookings.exists?
+      flash.alert = "Booking exist. Can't be deleted."
       redirect_to pet_path(@pet)
     else
       @pet.destroy
