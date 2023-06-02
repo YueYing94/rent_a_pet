@@ -37,6 +37,8 @@ class PetsController < ApplicationController
 
   def search
     @pets = Pet.where(species: params[:query])
+    @search_query = params[:query]
+    @result_count = @pets.count
   end
 
   private
