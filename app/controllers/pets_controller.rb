@@ -27,8 +27,12 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
-    @pet.destroy
-    redirect_to profile_path, status: :see_other
+    if @pet.bookings.exists?
+      redirect_to pet_path(@pet)
+    else
+      @pet.destroy
+      redirect_to profile_path, status: :see_other
+    end
   end
 
   def search
