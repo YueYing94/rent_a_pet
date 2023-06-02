@@ -1,27 +1,14 @@
-<div class="container">
-  <div class="pets-search-bar">
-    <%= form_with url: search_pets_path, method: :get do |form| %>
-      <div class="input-group mb-3">
-        <%= form.text_field :query, placeholder: "Enter pet specie e.g Dog", class: "form-control" %>
-        <%= form.submit "Search", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
 <div class="home">
+  <% if user_signed_in? %>
+    <h3>Hi <%= current_user.first_name.capitalize%>!</h3>
+  <% end %>
   <h1>All Pets</h1>
-
   <div class="cards">
     <% @pets.each do |pet| %>
-    <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill %>')">
       <%= link_to pet.name.upcase, pet_path(pet)%>
       <span> Age: <%= pet.age %></span>
     </div>
     <% end %>
   </div>
-
-  <% if user_signed_in? %>
-    <h3>Hi <%= current_user.first_name %></h3>
-  <% end %>
 </div>
