@@ -9,4 +9,8 @@ class PetPolicy < ApplicationPolicy
   def search?
     true
   end
+
+  def show?
+    true
+  end
 end
