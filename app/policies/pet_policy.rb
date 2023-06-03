@@ -5,4 +5,12 @@ class PetPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def update?
+    record.user == user
+  end
+
+  def edit?
+    update?
+  end
 end
