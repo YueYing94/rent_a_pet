@@ -6,8 +6,10 @@
     <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <div class="edit">
-    <%= link_to "Edit", edit_pet_path(@pet) %>
-    <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <% if policy(@pet).edit? %>
+      <%= link_to "Edit", edit_pet_path(@pet) %>
+      <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <% end %>
   </div>
 </div>
 
