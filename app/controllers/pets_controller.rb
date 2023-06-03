@@ -3,16 +3,18 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
-    authorize(@pet)
+    authorize @pet
   end
 
   def new
     @pet = Pet.new
+    authorize @pet
   end
 
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    authorize @pet
     @pet.save
     redirect_to pet_path(@pet)
   end
