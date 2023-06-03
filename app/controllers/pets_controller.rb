@@ -41,6 +41,7 @@ class PetsController < ApplicationController
     @pets = Pet.where('lower(species) = ?', params[:query].downcase)
     @search_query = params[:query]
     @result_count = @pets.count
+    authorize @pets
   end
 
   private
