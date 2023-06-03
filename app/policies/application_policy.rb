@@ -37,7 +37,7 @@ class ApplicationPolicy
   end
 
   def search?
-    true
+    false
   end
 
   class Scope
