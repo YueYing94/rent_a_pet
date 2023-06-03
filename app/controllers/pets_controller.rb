@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only:[:search]
+  skip_before_action :authenticate_user!, only: [:search]
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
@@ -19,10 +19,12 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def update
     @pet = Pet.find(params[:id])
+    authorize @pet
     @pet.update(pet_params)
     redirect_to pet_path(@pet)
   end

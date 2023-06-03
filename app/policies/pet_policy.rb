@@ -6,8 +6,8 @@ class PetPolicy < ApplicationPolicy
     # end
   end
 
-  def show?
-    true
+  def update?
+    record.user == user
   end
 
   def destroy?
@@ -18,7 +18,15 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    update?
+  end
+
   def search?
+    true
+  end
+
+  def show?
     true
   end
 end
