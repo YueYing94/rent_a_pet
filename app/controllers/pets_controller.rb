@@ -3,6 +3,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @booking = Booking.new
+    authorize @pet
   end
 
   def new
@@ -28,6 +29,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
+    authorize @pet
     if @pet.bookings.exists?
       flash.alert = "Booking exist. Can't be deleted."
       redirect_to pet_path(@pet)
@@ -41,6 +43,7 @@ class PetsController < ApplicationController
     @pets = Pet.where('lower(species) = ?', params[:query].downcase)
     @search_query = params[:query]
     @result_count = @pets.count
+    authorize @pets
   end
 
   private
