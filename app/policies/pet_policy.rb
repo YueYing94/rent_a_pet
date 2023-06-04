@@ -10,6 +10,14 @@ class PetPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def destroy?
+    record.user == user
+  end
+
+  def profile?
+    true
+  end
+
   def edit?
     update?
   end

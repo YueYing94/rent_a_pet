@@ -33,6 +33,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
+    authorize @pet
     if @pet.bookings.exists?
       flash.alert = "Booking exist. Can't be deleted."
       redirect_to pet_path(@pet)
