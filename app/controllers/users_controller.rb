@@ -6,10 +6,6 @@ class UsersController < ApplicationController
       @pets << pet if pet.user_id == current_user.id
     end
     @pets
-    if @pets.empty?
-      skip_authorization
-    else
-      authorize @pets
-    end
+    authorize current_user
   end
 end
