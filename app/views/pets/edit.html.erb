@@ -3,6 +3,7 @@
     <%= f.input :name %>
     <%= f.input :age %>
     <%= f.input :species %>
+    <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.input :available, as: :boolean, collection: [[true, 'Available'], [false, 'Not available']] %>
     <%= f.submit "Edit the pet!" %>
