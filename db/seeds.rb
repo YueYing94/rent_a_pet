@@ -26,21 +26,20 @@ john = User.create!(first_name: "John", last_name: "Meyers", address: "Boston Ro
 # Pet.create(name: "Howliday", species: "Dog", age: 6, available: true, user_id: john.id, pet_image: 'https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')
 
 file = URI.open("https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
-pet = Pet.new(name: "Howliday", species: "Dog", age: 6, available: true, description: "Howliday is a natural-born athlete, always ready for a game of fetch or a challenging agility course. Her agility and agility training skills never cease to amaze me. ")
+pet = Pet.new(name: "Howliday", species: "Dog", age: 6, available: true, description: "Howliday is a natural-born athlete, always ready for a game of fetch or a challenging agility course. Her agility and training skills never cease to amaze me. ")
 pet.photo.attach(io: file, filename: "Howliday.png", content_type: "image/png")
 pet.user = john
 pet.save!
 # Pet.create(name: "Broccoli", species: "Parrot", age: 3, available: true, user_id: anna.id, pet_image: 'https://images.unsplash.com/photo-1682079471326-75221097c37d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80')
+
 file = URI.open("https://images.unsplash.com/photo-1567113859810-1a93e49fb68a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JlZW4lMjBwYXJyb3QlMjBwZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60")
-pet = Pet.new(name: "Broccoli", species: "Parrot", age: 3, available: true, description: "my vibrant and charismatic parrot, is a feathered marvel that adds a burst of color and personality to our home. With his beautiful plumage of vibrant greens, yellows, and blues, he is a true spectacle to behold")
+pet = Pet.new(name: "Broccoli", species: "Parrot", age: 3, available: true, description: "My vibrant and charismatic parrot, is a feathered marvel that adds a burst of color and personality to our home. With his beautiful plumage of vibrant greens, yellows, and blues, he is a true spectacle to behold")
 pet.photo.attach(io: file, filename: "Broccoli.png", content_type: "image/png")
 pet.user = anna
 pet.save!
-
-
 # Pet.create(name: "Bonnie & Ronnie", species: "Guinea pigs", age: 2, available: false, user_id: danielle.id, pet_image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80')
 file = URI.open("https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80")
-pet = Pet.new(name: "Bonnie & Ronnie", species: "Guinea pigs", age: 2, available: false, description: "Bonnie & Ronnie, with their short and smooth fur, has a curious and outgoing personality. They always the first to approach, eagerly sniffing out treats and investigating new toys.")
+pet = Pet.new(name: "Bonnie & Ronnie", species: "Guinea pigs", age: 2, available: false, description: "Bonnie & Ronnie, with their short and smooth fur, have a curious and outgoing personality. They always the first to approach, eagerly sniffing out treats and investigating new toys.")
 pet.photo.attach(io: file, filename: "Bonnie & Ronnie.png", content_type: "image/png")
 pet.user = danielle
 pet.save!
@@ -52,19 +51,19 @@ pet.user = max
 pet.save!
 # Pet.create(name: "Samson", species: "Dog", age: 7, available: true, user_id: yue.id, pet_image: 'https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80')
 file = URI.open("https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")
-pet = Pet.new(name: "Samson", species: "Dog", age: 7, available: true, description: "Meet Samson: Samson is my energetic and playful Labrador Retriever. With her sleek black coat and wagging tail, she brings a burst of energy and happiness wherever she goes. ")
+pet = Pet.new(name: "Samson", species: "Dog", age: 7, available: true, description: "Meet Samson: Samson is my energetic and playful long haired poodle . With her caramel coat and wagging tail, she brings a burst of energy and happiness wherever she goes. ")
 pet.photo.attach(io: file, filename: "Samson.png", content_type: "image/png")
 pet.user = yue
 pet.save!
 # Pet.create(name: "Sir Meow ", species: "Cat", age: 9, available: true, user_id: jose.id, pet_image: 'https://images.unsplash.com/photo-1612126258173-85375840a9ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=416&q=80')
 file = URI.open("https://images.unsplash.com/photo-1612126258173-85375840a9ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=416&q=80")
-pet = Pet.new(name: "Captain Meow", species: "Cat", age: 9, available: true, description: "Captain, my gentle and affectionate Ragdoll cat, is the epitome of tranquility. With her soft, fluffy fur and striking blue eyes, she exudes an air of elegance and grace.")
+pet = Pet.new(name: "Captain Meow", species: "Cat", age: 9, available: true, description: "Captain, my gentle and affectionate Ragdoll cat, is the epitome of tranquility. With his soft, fluffy fur and striking blue eyes, he exudes an air of elegance and grace.")
 pet.photo.attach(io: file, filename: "CaptainMeow.png", content_type: "image/png")
 pet.user = jose
 pet.save!
 # Pet.create(name: "Julius Cheesar", species: "Mouse", age: 1, available: true, user_id: tolu.id, pet_image: 'https://images.unsplash.com/photo-1452721226468-f95fb66ebf83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDE2fHxwZXRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60')
 file = URI.open("https://images.unsplash.com/photo-1452721226468-f95fb66ebf83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDE2fHxwZXRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60")
-pet = Pet.new(name: "Julius Cheesar", species: "Mouse", age: 1, available: true, description: "Julius, my mischievous and curious ginger mouse, is a bundle of entertainment. He's always on the go, exploring every nook and cranny of the house with endless curiosity. ")
+pet = Pet.new(name: "Julius Cheesar", species: "Mouse", age: 1, available: true, description: "Julius, my mischievous and curious grey mouse, is a bundle of entertainment. He's always on the go, exploring every nook and cranny of the house with endless curiosity. ")
 pet.photo.attach(io: file, filename: "JuliusCheesar.png", content_type: "image/png")
 pet.user = tolu
 pet.save!
@@ -76,7 +75,7 @@ pet.user = maike
 pet.save!
 # Pet.create(name: "Bertha", species: "Goat", age: 5, available: false, user_id: matt.id, pet_image: 'https://images.unsplash.com/photo-1598191290644-a99f0560b1ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGdvYXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60')
 file = URI.open("https://images.unsplash.com/photo-1598191290644-a99f0560b1ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGdvYXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60")
-pet = Pet.new(name: "Bertha", species: "Goat", age: 5, available: false, description: "His playful nature is contagious, as he enjoys frolicking in open fields and engaging in friendly head-butting matches with his fellow goat companions. ")
+pet = Pet.new(name: "Bertha", species: "Goat", age: 5, available: false, description: "Her playful nature is contagious, as she enjoys frolicking in open fields and engaging in friendly head-butting matches with her fellow goat companions. ")
 pet.photo.attach(io: file, filename: "Bertha.png", content_type: "image/png")
 pet.user = matt
 pet.save!
@@ -88,13 +87,13 @@ pet.user = sarah
 pet.save!
 # Pet.create(name: "Sherlock", species: "Cat", age: 5, available: false, user_id: tommi.id, pet_image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1143&q=80')
 file = URI.open("https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1143&q=80")
-pet = Pet.new(name: "Sherlock", species: "Cat", age: 5, available: false, description: "In the quiet moments, she seeks out my lap for gentle strokes and purrs of contentment. Luna's presence brings a sense of tranquility and elegance to our home, reminding us of the beauty found in the company of cats.")
+pet = Pet.new(name: "Sherlock", species: "Cat", age: 5, available: false, description: "In the quiet moments, he seeks out my lap for gentle strokes and purrs of contentment. Sherlock's presence brings a sense of tranquility and elegance to our home, reminding us of the beauty found in the company of cats.")
 pet.photo.attach(io: file, filename: "Sherlock.png", content_type: "image/png")
 pet.user = tommi
 pet.save!
 # Pet.create(name: "Mrs Norris", species: "Cat", age: 2, available: true, user_id: ben.id, pet_image: 'https://images.unsplash.com/photo-1618759287629-ca56b5916066?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2luZ2VyJTIwY2F0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60')
 file = URI.open("https://images.unsplash.com/photo-1618759287629-ca56b5916066?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2luZ2VyJTIwY2F0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60")
-pet = Pet.new(name: "Mrs Norris", species: "Cat", age: 2, available: true, description: "Norris's playful antics and affectionate nature make him an irreplaceable member of our family, brightening our days with his charm and boundless energy.")
+pet = Pet.new(name: "Mrs Norris", species: "Cat", age: 2, available: true, description: "Norris's playful antics and affectionate nature make her an irreplaceable member of our family, brightening our days with her charm and boundless energy.")
 pet.photo.attach(io: file, filename: "MrsNorris.png", content_type: "image/png")
 pet.user = ben
 pet.save!
