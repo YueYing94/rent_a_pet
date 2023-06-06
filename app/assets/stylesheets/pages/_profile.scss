@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  width: 100%;
+}
+
+.current-pets {
+  padding-left: 150px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 1px solid green;
+  border-radius: 5px;
+  box-shadow: 3px 3px #888888;
+}
+
+.current-booking {
+  padding-left: 150px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 1px solid green;
+  border-radius: 5px;
+  box-shadow: 3px 3px #888888;
+}

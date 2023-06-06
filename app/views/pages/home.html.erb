@@ -5,7 +5,7 @@
   <h1>All Pets</h1>
   <div class="cards">
     <% @pets.each do |pet| %>
-    <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill %>')">
+    <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill, effect: :improve %>')">
       <%= link_to pet.name.upcase, pet_path(pet) %>
       <span> Age: <%= pet.age %></span>
     </div>
