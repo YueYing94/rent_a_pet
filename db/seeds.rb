@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
-User.destroy_all
+Booking.destroy_all
 Pet.destroy_all
+User.destroy_all
+
 
 ben = User.create!(first_name: "Ben", last_name: "Weasley", address: "Foxhole, Wessex, England", email: "ben.weasley@gmail.com", encrypted_password: 1945478, password: 1945478)
 tommi = User.create!(first_name: "Tommi", last_name: "Morse", address: "Clover Fields, Street, England", email: "tommi.morse@yahoo.com", encrypted_password: 7632132, password: 7632132)
@@ -30,7 +32,7 @@ pet.photo.attach(io: file, filename: "Howliday.png", content_type: "image/png")
 pet.user = john
 pet.save!
 # Pet.create(name: "Broccoli", species: "Parrot", age: 3, available: true, user_id: anna.id, pet_image: 'https://images.unsplash.com/photo-1682079471326-75221097c37d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80')
-file = URI.open("https://images.unsplash.com/photo-1682079471326-75221097c37d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80")
+file = URI.open("https://images.unsplash.com/photo-1567113859810-1a93e49fb68a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JlZW4lMjBwYXJyb3QlMjBwZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60")
 pet = Pet.new(name: "Broccoli", species: "Parrot", age: 3, available: true)
 pet.photo.attach(io: file, filename: "Broccoli.png", content_type: "image/png")
 pet.user = anna
