@@ -1,11 +1,17 @@
 class BookingsController < ApplicationController
   def create
     @pet = Pet.find(params[:pet_id])
-    @booking = Booking.new(booking_params)
-    @booking.pet = @pet
-    @booking.user = current_user
-    @booking.save
-    redirect_to profile_path
+    authorize @pet
+    if @pet.user == current_user
+      flash.alert = "Cannot book your own pet."
+      redirect_to pet_path(@pet)
+    else
+      @booking = Booking.new(booking_params)
+      @booking.pet = @pet
+      @booking.user = current_user
+      @booking.save
+      redirect_to profile_path
+    end
   end
 
   private
