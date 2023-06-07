@@ -1,25 +1,44 @@
-<div class="home">
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529330250279-95a914498cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGRvZyUyMGZvciUyMGElMjB3YWxrfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60);">
-  <div class="container">
-    <h1>Rent a Pet <strong> brings all creatures,</strong> great and small together</strong></h1>
-    <p>To buddy up - Worldwide, wherever you stray.</p>
-    <% if !user_signed_in? %>
-      <%= link_to "Sign_up", new_user_registration_path, class:"btn btn-success text-white"%>
-    <%end%>
+
+<div class="home" data-controller="add-map">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529330250279-95a914498cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGRvZyUyMGZvciUyMGElMjB3YWxrfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60);">
+    <div class="container">
+      <h1>Rent a Pet <strong> brings all creatures,</strong> great and small together</strong></h1>
+      <p>To buddy up - Worldwide, wherever you stray.</p>
+      <div>
+        <% if !user_signed_in? %>
+          <%= link_to "Sign_up", new_user_registration_path, class:"btn btn-success text-white"%>
+        <%end%>
+        <button class="btn btn-success text-white mx-3" data-action="click->add-map#change" data-add-map-target="button">
+          Show Map <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
 
   <% if user_signed_in? %>
     <h3>Hi <%= current_user.first_name.capitalize%>!</h3>
   <% end %>
+
   <h1>All Pets</h1>
-  <div class="cards">
-    <% @pets.each do |pet| %>
-    <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill, effect: :improve %>')">
-      <%= link_to pet.name.upcase, pet_path(pet) %>
-      <span> Age: <%= pet.age %></span>
+
+  <div data-add-map-target='list' class="">
+    <div class="cards">
+      <% @pets.each do |pet| %>
+      <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill, effect: :improve %>')">
+        <%= link_to pet.name.upcase, pet_path(pet) %>
+        <span> Age: <%= pet.age %></span>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
+
+  <div data-add-map-target='map' class="d-none">
+    <p>try out</p>
+    <div id="map" style="height: 300px; width: 600px"></div>
+  </div>
+
+
+
 </div>

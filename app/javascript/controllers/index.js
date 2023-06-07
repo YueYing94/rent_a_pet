@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import AddMapController from "./add_map_controller"
+application.register("add-map", AddMapController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
