@@ -1,4 +1,5 @@
-<div class="container">
+<div class="d-flex justify-content-center">
+<div class="create-edit-form">
   <%= simple_form_for @pet do |f| %>
     <%= f.input :name %>
     <%= f.input :age %>
@@ -6,6 +7,7 @@
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.input :available, as: :boolean, collection: [[true, 'Available'], [false, 'Not available']] %>
-    <%= f.submit "Edit the pet!" %>
+    <%= f.submit "Edit the pet!", class: "btn btn-success" %>
   <% end %>
+</div>
 </div>
