@@ -10,8 +10,9 @@
         <% if !user_signed_in? %>
           <%= link_to "Sign_up", new_user_registration_path, class:"btn btn-success text-white"%>
         <%end%>
-        <button class="btn btn-success text-white mx-3" data-action="click->add-map#change" data-add-map-target="button">
-          Show Map <i class="fa-solid fa-map-location-dot"></i>
+        <button class="btn btn-success text-white mx-3" data-action="click->add-map#change" >
+          <div data-add-map-target="buttonmap">Show Map <i class="fa-solid fa-map-location-dot"></i></div>
+          <div data-add-map-target="buttonlist" class="d-none">Show List <i class="fa-solid fa-list-ul"></i></div>
         </button>
       </div>
     </div>
