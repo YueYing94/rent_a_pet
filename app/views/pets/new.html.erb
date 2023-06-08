@@ -1,4 +1,6 @@
-<div class="container-new-pet">
+<div class="d-flex justify-content-center">
+
+<div class="create-edit-form">
   <%= simple_form_for @pet do |f| %>
     <%= f.input :name %>
     <%= f.input :age %>
@@ -6,6 +8,8 @@
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.input :available, as: :boolean, collection: [[true, 'Available'], [false, 'Not available']] %>
-    <%= f.submit "Create new pet!" %>
+    <%= f.submit "Create new pet!", class: "btn btn-success" %>
   <% end %>
 <div>
+
+</div>

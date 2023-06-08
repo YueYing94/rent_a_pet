@@ -2,6 +2,7 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:search, :show]
   def show
     @pet = Pet.find(params[:id])
+    @pet_review = PetReview.new
     @booking = Booking.new
     authorize @pet
   end
