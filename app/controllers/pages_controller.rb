@@ -17,7 +17,8 @@ class PagesController < ApplicationController
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {user: user})
       }
     end
 

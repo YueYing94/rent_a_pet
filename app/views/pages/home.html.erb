@@ -1,6 +1,8 @@
 
 
-<div class="home" data-controller="add-map">
+<div class="home" data-controller="map"
+data-map-markers-value="<%= @markers.to_json %>"
+data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529330250279-95a914498cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGRvZyUyMGZvciUyMGElMjB3YWxrfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60);">
     <div class="container">
@@ -10,9 +12,9 @@
         <% if !user_signed_in? %>
           <%= link_to "Sign_up", new_user_registration_path, class:"btn btn-success text-white"%>
         <%end%>
-        <button class="btn btn-success text-white mx-3" data-action="click->add-map#change" >
-          <div data-add-map-target="buttonmap">Show Map <i class="fa-solid fa-map-location-dot"></i></div>
-          <div data-add-map-target="buttonlist" class="d-none">Show List <i class="fa-solid fa-list-ul"></i></div>
+        <button class="btn btn-success text-white mx-3" data-action="click->map#change" >
+          <div data-map-target="buttonmap">Show Map <i class="fa-solid fa-map-location-dot"></i></div>
+          <div data-map-target="buttonlist" class="d-none">Show List <i class="fa-solid fa-list-ul"></i></div>
         </button>
       </div>
     </div>
@@ -20,7 +22,7 @@
 
   <h1>All Pets</h1>
 
-  <div data-add-map-target='list' class="">
+  <div data-map-target='list' class="">
     <div class="cards">
       <% @pets.each do |pet| %>
       <div class="card-category  d-flex flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill, effect: :improve %>')">
@@ -31,13 +33,11 @@
     </div>
   </div>
 
-  <div data-add-map-target='map' class="d-none">
+  <div data-map-target='map' class="d-none">
 
     <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      id="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      data-map-target="container"
+      id="map">
     </div>
 
   </div>
