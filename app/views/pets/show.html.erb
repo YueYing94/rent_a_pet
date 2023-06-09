@@ -24,17 +24,17 @@
 
 
 <div class="container">
-<% if user_signed_in? %>
-  <% if current_user != @pet.user %>
-    <%= simple_form_for [@pet, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { type: 'date' } %>
-      <%= f.input :end_date, as: :string, input_html: { type: 'date' } %>
-      <%= f.submit "Book it!" %>
+  <% if user_signed_in? %>
+    <% if current_user != @pet.user %>
+      <%= simple_form_for [@pet, @booking],  data: { controller: 'flatpickr', unavailable_dates: @pet.unavailable_dates.to_json } do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { type: 'date', data: { flatpickr_target: "startDate" }, class: "datepicker" } %>
+        <%= f.input :end_date, as: :string, input_html: { type: 'date', data: { flatpickr_target: "endDate" }, class: "datepicker" } %>
+        <%= f.submit "Book it!" %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% else %>
-    <div class="alert alert-dismissible fade show">
-      <strong><i class="fa-solid fa-triangle-exclamation"></i></strong> You should log in to book it.
-    </div>
-  <% end %>
+    <% else %>
+      <div class="alert alert-dismissible fade show">
+        <strong><i class="fa-solid fa-triangle-exclamation"></i></strong> You should log in to book it.
+      </div>
+    <% end %>
 <div>
