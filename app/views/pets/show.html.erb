@@ -38,3 +38,67 @@
       </div>
     <% end %>
 <div>
+<div class="accordion dropdown" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Reviews <i class="fa-solid fa-comment px-2"></i>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+        <div class="py-4">
+          <% if user_signed_in? %>
+            <% if current_user != @pet.user %>
+              <div>
+                <h3>New Review</h3>
+                <%= simple_form_for [@pet, @pet_review] do |f| %>
+                <%= f.input :content %>
+                <%= f.input :rating %>
+                <%= f.submit "Submit review", class: "btn btn-success" %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <ul class="list-unstyled">
+          <% @pet.pet_reviews.each do |review| %>
+            <li class="py-2">
+              <strong>Review:</strong> <%= review.content %><br>
+              <strong>Rating:</strong> <%= review.rating %>
+            </li>
+          <% end %>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <% if user_signed_in? %>
+    <% if current_user != @pet.user %>
+
+    <div class="d-flex justify-content-center">
+      <div class="booking-form">
+        <h1>New Booking</h1>
+        <%= simple_form_for [@pet, @booking] do |f| %>
+          <%= f.input :start_date, as: :string, input_html: { type: 'date' } %>
+          <%= f.input :end_date, as: :string, input_html: { type: 'date' } %>
+          <%= f.submit "Book", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+  <% else %>
+    <div class="alert alert-dismissible fade show">
+      <strong><i class="fa-solid fa-triangle-exclamation"></i></strong> You should log in to book it.
+    </div>
+  <% end %>
