@@ -18,10 +18,6 @@
     </div>
   </div>
 
-  <% if user_signed_in? %>
-    <h3>Hi <%= current_user.first_name.capitalize%>!</h3>
-  <% end %>
-
   <h1>All Pets</h1>
 
   <div data-add-map-target='list' class="">
@@ -36,8 +32,14 @@
   </div>
 
   <div data-add-map-target='map' class="d-none">
-    <p>try out</p>
-    <div id="map" style="height: 300px; width: 600px"></div>
+
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      id="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
   </div>
 
 
