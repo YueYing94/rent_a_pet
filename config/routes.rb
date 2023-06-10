@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "/profile", to: "users#profile"
-  get "/users/:id", to: "users#show"
+  get "/users/:id", to: "users#show", as: :user
   resources :pets do
     resources :pet_reviews, only: [:create]
     resources :bookings, only:[:create]
