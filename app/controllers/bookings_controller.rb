@@ -9,8 +9,7 @@ class BookingsController < ApplicationController
       @booking = Booking.new(booking_params)
       @booking.pet = @pet
       @booking.user = current_user
-      @booking.save
-      redirect_to profile_path
+      redirect_to profile_path if @booking.save
     end
   end
 
