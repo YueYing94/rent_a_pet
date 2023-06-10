@@ -13,14 +13,18 @@ class PagesController < ApplicationController
       @pets = Pet.all
     end
 
-    @users = User.all
+    if current_user.present?
+      @users = User.where.not(id: current_user.id)
+    else
+      @users = User.all
+    end
+
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {user: user})
       }
-
     end
 
   end
