@@ -4,6 +4,12 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet_review = PetReview.new
     @booking = Booking.new
+    @markers = @pet.user.geocode.map do |flat|
+      {
+        lat: @pet.user.latitude,
+        lng: @pet.user.longitude
+      }
+    end
     authorize @pet
   end
 
