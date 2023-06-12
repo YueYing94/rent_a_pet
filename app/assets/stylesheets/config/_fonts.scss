@@ -1,5 +1,5 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;700;800&display=swap");
 
 // Define fonts for body and headers
 $body-font: "Sora", "sans-serif";
@@ -14,3 +14,10 @@ $headers-font: "Sora", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.custom-marker {
+  background-color: #28a745;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
