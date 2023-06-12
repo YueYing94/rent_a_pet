@@ -4,7 +4,9 @@
 <div style="width: 50%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-map-target="container"
+  data-map-has-popup-value= "false" ></div>
 
 </div>
 
@@ -19,63 +21,79 @@
   </div>
   <div class="edit">
     <% if policy(@pet).edit? %>
-      <%= link_to "Edit", edit_pet_path(@pet) %>
-      <%= link_to "Delete", pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+      <%= link_to edit_pet_path(@pet) do %>
+        <i class="fa-solid fa-pen-to-square" style="color: #009500;"></i>
+      <% end %>
+      <%= link_to pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  do %>
+        <i class="fa-solid fa-trash-can" style="color: #009500;"></i>
+      <% end %>
     <% end %>
   </div>
   <div class="pet-owner">
-   <h2> <%= @pet.user.first_name %></h2>
-   <i class="fa-regular fa-user"></i>
+   <h2> <%= @pet.user.first_name %>
+   <i class="fa-regular fa-user"></i></h2>
   </div>
   <div class="owner-address">
    <p> <%= @pet.user.address %></p>
    <i class="fa-solid fa-location-dot"></i>
   </div>
-  <p><%= @pet.description %></p>
+  <p class="dropdown"><%= @pet.description %></p>
 </div>
 
-<div class="accordion dropdown" id="accordionExample">
-  <div class="accordion-item">
-  <h2 class="accordion-header">
-    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-      Reviews <i class="fa-solid fa-comment px-2"></i>
-    </button>
-  </h2>
-  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
 
-      <div class="py-4">
-        <% if user_signed_in? %>
-          <% if current_user != @pet.user %>
-            <div>
-              <h3>New Review</h3>
-              <%= simple_form_for [@pet, @pet_review] do |f| %>
-              <%= f.input :content %>
-              <%= f.input :rating %>
-              <%= f.submit "Submit review", class: "btn btn-success" %>
+
+
+
+
+<% if user_signed_in? %>
+  <div class="accordion dropdown" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Reviews <i class="fa-solid fa-comment px-2"></i>
+        </button>
+      </h2>
+
+
+
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <div class="py-5" data-controller='insert-in-list'>
+
+            <% if current_user != @pet.user %>
+              <div class="mb-4">
+                <h3>New Review</h3>
+                <%= render 'pet_reviews/form', pet: @pet, pet_review: @pet_review %>
+              </div>
+            <% end %>
+
+            <h3>All Reviews</h3>
+            <ul class="list-unstyled"  data-insert-in-list-target='items'>
+              <% @pet.pet_reviews.order(created_at: :desc).each do |pet_review| %>
+                  <%= render 'pets/pet_review', pet_review: pet_review %>
               <% end %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+            </ul>
 
-      <ul class="list-unstyled">
-        <% @pet.pet_reviews.each do |review| %>
-          <li class="py-2">
-            <strong>Review:</strong> <%= review.content %><br>
-            <strong>Rating:</strong> <%= review.rating %>
-          </li>
-        <% end %>
-      </ul>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
+
+
+
+
+
 
 <div class="d-flex justify-content-center mt-5">
   <div class="booking-form">
-    <h1>New Booking</h1>
     <% if user_signed_in? %>
       <% if current_user != @pet.user %>
+        <h1>New Booking</h1>
         <%= simple_form_for [@pet, @booking],  data: { controller: 'flatpickr', unavailable_dates: @pet.unavailable_dates.to_json } do |f| %>
           <%= f.input :start_date, as: :string, input_html: { type: 'date', data: { flatpickr_target: "startDate" }, class: "datepicker" } %>
           <%= f.input :end_date, as: :string, input_html: { type: 'date', data: { flatpickr_target: "endDate" }, class: "datepicker" } %>
