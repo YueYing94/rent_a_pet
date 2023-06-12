@@ -45,11 +45,6 @@
       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
         <div class="accordion-body">
 
-
-
-
-
-
           <div class="py-5" data-controller='insert-in-list'>
 
             <% if current_user != @pet.user %>
@@ -61,20 +56,12 @@
 
             <h3>All Reviews</h3>
             <ul class="list-unstyled"  data-insert-in-list-target='items'>
-              <% @pet.pet_reviews.each do |pet_review| %>
-                <li class="py-2">
+              <% @pet.pet_reviews.order(created_at: :desc).each do |pet_review| %>
                   <%= render 'pets/pet_review', pet_review: pet_review %>
-                </li>
               <% end %>
             </ul>
 
           </div>
-
-
-
-
-
-
 
         </div>
       </div>
