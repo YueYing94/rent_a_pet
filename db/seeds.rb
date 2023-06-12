@@ -11,18 +11,18 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-ben = User.create!(first_name: "Ben", last_name: "Weasley", address: "Foxhole, Wessex, England", email: "ben.weasley@gmail.com", encrypted_password: 1945478, password: 1945478)
-tommi = User.create!(first_name: "Tommi", last_name: "Morse", address: "Clover Fields, Street, England", email: "tommi.morse@yahoo.com", encrypted_password: 7632132, password: 7632132)
-sarah = User.create!(first_name: "Sarah", last_name: "Lee", address: "Abbey Road, London, England", email: "sarah.lee@yahoo.com", encrypted_password: 1231373, password: 1231373)
-matt = User.create!(first_name: "Matt", last_name: "Johnson", address: "Austen Drive, Bath, England", email: "matt.johnson@gmail.com",  encrypted_password: 3872318, password: 3872318)
-maike = User.create!(first_name: "Maike", last_name: "Müller", address: "Berliner Strasse, Berlin, Germany", email: "maike.mueller@gmail.com", encrypted_password: 2891312, password: 2891312)
-yue = User.create!(first_name: "Yue", last_name: "van de Zand", address: "Grachtenstraat, Amsterdam, Netherlands", email: "yue.vandezand@yahoo.nl", encrypted_password: 1854389, password: 1854389)
-jose = User.create!(first_name: "José", last_name: "Alvarez", address: "Las ramblas, Lissabon, Portugal", email: "josé.alvarez@gmail.com", encrypted_password: 8732763, password: 8732763)
-tolu = User.create!(first_name: "Tolu", last_name: "Ola", address: "Manchester Square, Manchester, England", email: "tolu.ola@lewagon.uk", encrypted_password: 9371231, password: 9371231)
-max = User.create!(first_name: "Max", last_name: "Mercury", address: "Bermondsey Street, London, England ", email: "max.mercury@gmail.com", encrypted_password: 8461634, password: 8461634)
+ben = User.create!(first_name: "Ben", last_name: "Weasley", address: "Fylkisvegur 9, 110 Reykjavík, Iceland", email: "ben.weasley@gmail.com", encrypted_password: 1945478, password: 1945478)
+tommi = User.create!(first_name: "Tommi", last_name: "Morse", address: "Cosmarweg 58, 13591 Berlin, Germany", email: "tommi.morse@yahoo.com", encrypted_password: 7632132, password: 7632132)
+sarah = User.create!(first_name: "Sarah", last_name: "Lee", address: "Knocknamoe, Co. Laois, Ireland", email: "sarah.lee@yahoo.com", encrypted_password: 1231373, password: 1231373)
+matt = User.create!(first_name: "Matt", last_name: "Johnson", address: "Louis de Naeyerplein 27, 2830 Willebroek, Belgium", email: "matt.johnson@gmail.com",  encrypted_password: 3872318, password: 3872318)
+maike = User.create!(first_name: "Maike", last_name: "Müller", address: "120 Av. Lucien Salentiny, 9080 Ettelbruck, Luxembourg", email: "maike.mueller@gmail.com", encrypted_password: 2891312, password: 2891312)
+yue = User.create!(first_name: "Yue", last_name: "van de Zand", address: "Theodora Jacobalaan 49, 3043 PP Rotterdam", email: "yue.vandezand@yahoo.nl", encrypted_password: 1854389, password: 1854389)
+jose = User.create!(first_name: "José", last_name: "Alvarez", address: "Orellistrasse 21, 8044 Zürich, Switzerland", email: "josé.alvarez@gmail.com", encrypted_password: 8732763, password: 8732763)
+tolu = User.create!(first_name: "Tolu", last_name: "Ola", address: "Haverkamp, 25488 Holm, Germany", email: "tolu.ola@lewagon.uk", encrypted_password: 9371231, password: 9371231)
+max = User.create!(first_name: "Max", last_name: "Mercury", address: "Nordmarksvej 8, 7190 Billund, Denmark ", email: "max.mercury@gmail.com", encrypted_password: 8461634, password: 8461634)
 danielle = User.create!(first_name: "Danielle", last_name: "Rochelle", address: "Rue de la vie, Paris, France", email: "danielle.rochelle@lewagon.fr", encrypted_password: 1346438, password: 1346438)
-anna = User.create!(first_name: "Anna", last_name: "Baker", address: "Tulip Gardens, Edinborough", email: "anna.baker@yahoo.com", encrypted_password: 2645643, password: 2645643)
-john = User.create!(first_name: "John", last_name: "Meyers", address: "Boston Road, New York, USA", email: "john.meyers@yahoo.com", encrypted_password: 2713786, password: 2713786)
+anna = User.create!(first_name: "Anna", last_name: "Baker", address: "6 Rue Cerf-Berr, 67200 Strasbourg, France", email: "anna.baker@yahoo.com", encrypted_password: 2645643, password: 2645643)
+john = User.create!(first_name: "John", last_name: "Meyers", address: "Austrasse 6, 9495 Triesen, Liechtenstein", email: "john.meyers@yahoo.com", encrypted_password: 2713786, password: 2713786)
 
 # Pet.create(name: "Howliday", species: "Dog", age: 6, available: true, user_id: john.id, pet_image: 'https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')
 

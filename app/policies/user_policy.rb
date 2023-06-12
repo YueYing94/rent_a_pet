@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def profile?
     true
   end
+
+  def show?
+    true
+  end
 end

@@ -8,4 +8,10 @@ class UsersController < ApplicationController
     @pets
     authorize current_user
   end
+
+  def show
+    @user = User.find(params[:id])
+    @pets = @user.pets
+    authorize @user
+  end
 end
