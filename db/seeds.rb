@@ -24,6 +24,7 @@ danielle = User.create!(first_name: "Danielle", last_name: "Rochelle", address: 
 anna = User.create!(first_name: "Anna", last_name: "Baker", address: "6 Rue Cerf-Berr, 67200 Strasbourg, France", email: "anna.baker@yahoo.com", encrypted_password: 2645643, password: 2645643)
 john = User.create!(first_name: "John", last_name: "Meyers", address: "Austrasse 6, 9495 Triesen, Liechtenstein", email: "john.meyers@yahoo.com", encrypted_password: 2713786, password: 2713786)
 
+
 # Pet.create(name: "Howliday", species: "Dog", age: 6, available: true, user_id: john.id, pet_image: 'https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')
 
 file = URI.open("https://images.unsplash.com/photo-1682258576596-33db89ab1b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")

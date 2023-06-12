@@ -13,6 +13,7 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
+    hasPopup: Boolean,
   };
 
   connect() {
@@ -23,14 +24,25 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10",
     });
 
-    this.#addMarkersToMap();
     this.#fitMapToMarkers();
-    this.map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-      })
-    );
+
+    if (this.hasPopupValue) {
+      this.#addMarkersToMap();
+      this.map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+        })
+      );
+    } else {
+      this.#addMarkerNoPopup();
+    }
+  }
+
+  #addMarkerNoPopup() {
+    this.markersValue.forEach((marker) => {
+      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+    });
   }
 
   #addMarkersToMap() {

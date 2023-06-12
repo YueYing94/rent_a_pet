@@ -2,7 +2,8 @@
 
 <div class="home" data-controller="map"
 data-map-markers-value="<%= @markers.to_json %>"
-data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+data-map-has-popup-value= "true">
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529330250279-95a914498cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fGRvZyUyMGZvciUyMGElMjB3YWxrfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60);">
     <div class="container">

@@ -1,3 +1,17 @@
+
+<div class="container">
+
+<div style="width: 50%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-map-target="container"
+  data-map-has-popup-value= "false" ></div>
+
+</div>
+
+
+
 <div class="container">
   <div class="pet-name">
     <h1><%= @pet.name %></h1>
