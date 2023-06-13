@@ -17,8 +17,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #F9F9F9;
-
+  background-color: #f9f9f9;
 }
 .container-new-pet input[type="text"],
 .container-new-pet input[type="file"],
@@ -32,12 +31,12 @@
   border-radius: 5px;
 }
 .container-new-pet input[type="submit"] {
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   cursor: pointer;
 }
 .container-new-pet input[type="submit"]:hover {
-  background-color: #0056B3;
+  background-color: #0056b3;
 }
 .container-new-pet label {
   font-weight: bold;
@@ -54,7 +53,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .container-log-in h2 {
@@ -88,7 +87,7 @@
 }
 
 .container-log-in input[type="submit"]:hover {
-  background-color: #40e29a
+  background-color: #40e29a;
 }
 
 .container-log-in .form-actions {
@@ -137,16 +136,6 @@
     }
   }
 
-  .pet-image {
-    flex: 1;
-
-    img {
-      height: 300px;
-      width: 400px;
-      object-fit: cover;
-    }
-  }
-
   .edit {
     flex: 1;
     display: flex;
@@ -187,22 +176,20 @@
     display: flex;
     align-items: center;
 
-   p {
-    margin-right: 5px;
-    font-size: 14px;
-    color: #777;
-    font-weight: 600;
-   }
+    p {
+      margin-right: 5px;
+      font-size: 14px;
+      color: #777;
+      font-weight: 600;
+    }
 
-   i {
-    font-size: 14px;
-    margin-right: 10px;
-    color: #131212;
-    align-self: flex-start;
-   }
+    i {
+      font-size: 14px;
+      margin-right: 10px;
+      color: #131212;
+      align-self: flex-start;
+    }
   }
-
-
 
   form {
     flex: 1;
@@ -226,8 +213,27 @@
 
       &:hover {
         background-color: #555;
-
       }
     }
+  }
+}
+
+.map {
+  justify-self: end;
+}
+
+.container-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 20px;
+
+  .pet-image {
+    flex: 1;
   }
 }
