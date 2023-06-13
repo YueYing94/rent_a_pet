@@ -1,3 +1,8 @@
+<div class="user-info-profile">
+  <h2><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h2>
+  <h5><%= current_user.email %></h5>
+  <p><%= current_user.address %></p>
+</div>
 
 <div class = "container-profile">
   <div class="current-pets">
@@ -9,7 +14,7 @@
               <div class="card-product">
                 <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
                 <div class="card-product-infos">
-                  <h2>Name <%= link_to pet.name, pet_path(pet), class:"text-decoration-none" %></h2>
+                  <h2><%= link_to pet.name, pet_path(pet), class:"text-decoration-none" %></h2>
                   <p>Age <%= pet.age %></p>
                   <% if pet.available %>
                     <i class="fa-solid fa-check"></i>
