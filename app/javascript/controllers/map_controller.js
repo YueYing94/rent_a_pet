@@ -41,14 +41,22 @@ export default class extends Controller {
 
   #addMarkerNoPopup() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+      const markerColor = document.createElement("div");
+      markerColor.innerHTML =
+        "<i class='fa-sharp fa-solid fa-location-dot fa-2xl' style='color: #28a745;'></i>";
+      new mapboxgl.Marker(markerColor)
+        .setLngLat([marker.lng, marker.lat])
+        .addTo(this.map);
     });
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
-      new mapboxgl.Marker()
+      const markerColor = document.createElement("div");
+      markerColor.innerHTML =
+        "<i class='fa-sharp fa-solid fa-location-dot fa-2xl' style='color: #28a745;'></i>";
+      new mapboxgl.Marker(markerColor)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(this.map);
