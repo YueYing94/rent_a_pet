@@ -13,7 +13,7 @@ data-map-has-popup-value= "true">
         <% if !user_signed_in? %>
           <%= link_to "Sign_up", new_user_registration_path, class:"btn btn-success text-white"%>
         <%end%>
-        <button class="btn btn-success text-white mx-3" data-action="click->map#change" >
+        <button class="btn btn-success text-white mx-3 sora" data-action="click->map#change" >
           <div data-map-target="buttonmap">Show Map <i class="fa-solid fa-map-location-dot"></i></div>
           <div data-map-target="buttonlist" class="d-none">Show List <i class="fa-solid fa-list-ul"></i></div>
         </button>
