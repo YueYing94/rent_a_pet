@@ -1,12 +1,17 @@
 
-<div class="container">
+<div class="container-show">
 
-<div style="width: 50%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-target="container"
-  data-map-has-popup-value= "false" ></div>
+ <div class="map" style="width: 400px; height: 300px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-map-target="container"
+    data-map-has-popup-value= "false" >
+  </div>
+
+  <div class="pet-image">
+    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
 
 </div>
 
@@ -16,9 +21,7 @@
   <div class="pet-name">
     <h1><%= @pet.name %></h1>
   </div>
-  <div class="pet-image">
-    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-  </div>
+
   <div class="edit">
     <% if policy(@pet).edit? %>
       <%= link_to edit_pet_path(@pet) do %>
