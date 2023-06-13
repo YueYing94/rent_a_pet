@@ -1,49 +1,59 @@
+<br>
 
-<div class="container">
-
-<div style="width: 50%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-target="container"
-  data-map-has-popup-value= "false" ></div>
-
-</div>
-
-
-
-<div class="container">
-  <div class="pet-name">
-    <h1><%= @pet.name %></h1>
-  </div>
+<div class="container-show">
   <div class="pet-image">
-    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @pet.photo.key, height: 600, width: 700, crop: :fill %>
   </div>
-  <div class="edit">
-    <% if policy(@pet).edit? %>
-      <%= link_to edit_pet_path(@pet) do %>
-        <i class="fa-solid fa-pen-to-square" style="color: #009500;"></i>
-      <% end %>
-      <%= link_to pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  do %>
-        <i class="fa-solid fa-trash-can" style="color: #009500;"></i>
-      <% end %>
-    <% end %>
+
+  <div class="map" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-map-target="container"
+    data-map-has-popup-value= "false" >
   </div>
-  <div class="pet-owner">
-   <h2> <%= @pet.user.first_name %>
-   <i class="fa-regular fa-user"></i></h2>
-  </div>
-  <div class="owner-address">
-   <p> <%= @pet.user.address %></p>
-   <i class="fa-solid fa-location-dot"></i>
-  </div>
-  <p class="dropdown"><%= @pet.description %></p>
+
 </div>
 
+<div class="container">
+  <div class="pet-info">
+    <div class="pet-name">
+      <h1><%= @pet.name %></h1>
+    </div>
 
 
+    <div class="edit">
+      <% if policy(@pet).edit? %>
+        <%= link_to edit_pet_path(@pet) do %>
+          <i class="fa-solid fa-pen-to-square" style="color: #009500;"></i>
+        <% end %>
+        <%= link_to pet_path(@pet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  do %>
+          <i class="fa-solid fa-trash-can" style="color: #009500;"></i>
+        <% end %>
+      <% end %>
+    </div>
 
 
+    <div class="pet-owner">
+      <h2> <%= @pet.user.first_name %>
+      <i class="fa-regular fa-user"></i></h2>
+    </div>
+
+
+    <div class="owner-address">
+      <p> <%= @pet.user.address %></p>
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+
+      <div>
+        <p><%= @pet.description %></p>
+      </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
 
 <% if user_signed_in? %>
   <div class="accordion dropdown" id="accordionExample">
