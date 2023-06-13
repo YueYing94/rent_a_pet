@@ -1,10 +1,19 @@
+.user-info-profile {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  background-color: rgb(224, 245, 224);
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(196, 192, 192, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+
 .container-profile {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
   width: 100%;
-  align-items: center;
-
+  align-items: stretch;
 }
 
 .booking-text {
@@ -19,7 +28,6 @@
   margin-left: 20px;
   border: 1px solid green;
   border-radius: 5px;
-  box-shadow: 3px 3px #888888;
   background-color: rgb(234, 246, 234);
   background-size: contain;
 }
@@ -29,9 +37,8 @@
   margin-top: 50px;
   margin-bottom: 20px;
   margin-right: 20px;
-  border: 1px solid green;
   border-radius: 5px;
-  box-shadow: 3px 3px #888888;
+  border: 1px solid green;
   background-color: rgb(234, 246, 234);
   background-size: contain;
 }
