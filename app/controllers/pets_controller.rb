@@ -4,7 +4,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet_review = PetReview.new
     @booking = Booking.new
-    @markers = @pet.user.geocode.map do |pet|
+    @markers = @pet.user.geocode.map do
       {
         lat: @pet.user.latitude,
         lng: @pet.user.longitude
