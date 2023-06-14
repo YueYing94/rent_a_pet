@@ -39,7 +39,7 @@
           <div class="card-product">
             <%= cl_image_tag booking.pet.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
-              <h2>Name <%= booking.pet.name %></h2>
+              <h2><%= link_to booking.pet.name, pet_path(booking.pet), class:"text-decoration-none" %></h2>
               <p>Age <%= booking.pet.age %></p>
             </div>
           </div>
