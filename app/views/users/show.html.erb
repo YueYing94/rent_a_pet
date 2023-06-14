@@ -8,7 +8,7 @@
               <div class="card-product">
                 <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
                 <div class="card-product-infos">
-                  <h2>Name <%= link_to pet.name, pet_path(pet), class:"text-decoration-none" %></h2>
+                  <h2><%= link_to pet.name, pet_path(pet), class:"text-decoration-none" %></h2>
                   <p>Age <%= pet.age %></p>
                   <% if pet.available %>
                     <i class="fa-solid fa-check"></i>
